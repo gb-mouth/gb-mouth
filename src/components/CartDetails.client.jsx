@@ -129,13 +129,13 @@ export function CartLineItem() {
             </Link>
           </h3>
 
-          <div className="flex flex-col justify-start mt-2">
+          {/* <div className="flex flex-col justify-start mt-2">
             {(merchandise?.selectedOptions || []).map((option) => (
               <span key={option.name} className="last:mb-4 text-gray-500">
                 {option.name}: {option.value}
               </span>
             ))}
-          </div>
+          </div> */}
 
           <div className="flex items-center gap-2 mt-auto">
             <div className="flex justify-start text-copy mr-4">
@@ -166,9 +166,9 @@ export function CartLineItem() {
             </button>
           </div>
         </div>
-        <span>
+        {/* <span>
           <CartLinePrice as="span" />
-        </span>
+        </span> */}
       </div>
     </li>
   );

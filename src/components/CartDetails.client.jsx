@@ -52,13 +52,13 @@ export function CartEmpty({ onClose }) {
   return (
     <div className="flex flex-col space-y-7 justify-center items-center md:py-8 md:px-12 px-4 py-6 h-screen">
       <h2 className="whitespace-pre-wrap max-w-prose font-bold text-4xl">
-        Your cart is empty
+        カートが空です
       </h2>
       <button
         onClick={onClose}
         className="inline-block rounded-sm font-medium text-center py-3 px-6 max-w-xl leading-none bg-black text-white w-full"
       >
-        Continue shopping
+        買い物を続ける
       </button>
     </div>
   );
@@ -74,7 +74,7 @@ function CartCheckoutActions() {
           width="full"
           className="inline-block rounded-sm font-medium text-center py-3 px-6 max-w-xl leading-none bg-black text-white w-full"
         >
-          Continue to Checkout
+          決済へ進む
         </Link>
         <CartShopPayButton className="flex items-center justify-center rounded-sm mt-2 bg-[#5a31f4] w-full" />
       </div>
@@ -129,13 +129,13 @@ export function CartLineItem() {
             </Link>
           </h3>
 
-          <div className="flex flex-col justify-start mt-2">
+          {/* <div className="flex flex-col justify-start mt-2">
             {(merchandise?.selectedOptions || []).map((option) => (
               <span key={option.name} className="last:mb-4 text-gray-500">
                 {option.name}: {option.value}
               </span>
             ))}
-          </div>
+          </div> */}
 
           <div className="flex items-center gap-2 mt-auto">
             <div className="flex justify-start text-copy mr-4">
@@ -166,9 +166,9 @@ export function CartLineItem() {
             </button>
           </div>
         </div>
-        <span>
+        {/* <span>
           <CartLinePrice as="span" />
-        </span>
+        </span> */}
       </div>
     </li>
   );

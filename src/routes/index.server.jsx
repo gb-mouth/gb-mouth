@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import FeaturedCollections from "../components/FeaturedCollections.server";
+import FeaturedCollections from "../components/sections/FeaturedCollections.server";
 import { Layout } from "../components/Layout.server";
 
 export default function Home() {

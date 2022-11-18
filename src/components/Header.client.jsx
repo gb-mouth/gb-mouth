@@ -7,7 +7,6 @@ import { MenuDrawer, useMenuDrawer } from "./MenuDrawer.client";
 
 export default function Header({ shop }) {
   const { pathname } = useUrl();
-  const { isOpen, openDrawer, closeDrawer } = useDrawer();
   const {
     isOpen: isCartOpen,
     openDrawer: openCart,
@@ -75,29 +74,6 @@ function MobileHeader({title, isHome, openCart, openMenu}) {
     } flex h-16 p-6 md:p-8 lg:p-12 lg:hidden items-center h-nav sticky backdrop-blur-lg z-40 top-0 justify-between w-full leading-none gap-4 px-4 md:px-8`,
   };
 
-  /** 元のコード
-      <header
-      role="banner"
-      className={`flex items-center h-16 p-6 md:p-8 lg:p-12 sticky backdrop-blur-lg z-40 top-0 justify-between w-full leading-none gap-4 antialiased transition shadow-sm ${
-        isHome ? "bg-black/80 text-white" : "bg-white/80"
-      }`}
-    >
-      <div className="flex gap-12">
-        <Link className="font-bold" to="/">
-          {shop.name}
-        </Link>
-      </div>
-
-      <button
-        onClick={openDrawer}
-        className="relative flex items-center justify-center w-8 h-8"
-      >
-        <IconBag />
-        <CartBadge dark={isHome} />
-      </button>
-    </header>
-  */
-
   return (
     <header role="banner" className={styles.container}>
       <div className="flex items-center justify-start w-full gap-4">
@@ -133,7 +109,7 @@ function DesktopHeader({countryCode, isHome, menu, openCart, title}) {
       'relative flex items-center justify-center w-8 h-8 focus:ring-primary/5',
     container: `${
       isHome
-        ? 'bg-black/80 text-white dark:bg-contrast/60  text-contrast dark:text-primary shadow-darkHeader'
+        ? 'bg-black/80 text-white dark:bg-contrast/60 text-contrast dark:text-primary shadow-darkHeader'
         : 'bg-contrast/80 text-primary'
     } ${
       y > 50 && !isHome ? 'shadow-lightHeader ' : ''

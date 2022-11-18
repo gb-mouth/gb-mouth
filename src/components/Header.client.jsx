@@ -3,6 +3,7 @@ import { useWindowScroll } from "react-use";
 import { Drawer, useDrawer } from "./Drawer.client";
 import { CartDetails } from "./CartDetails.client";
 import { IconBag, IconMenu } from "./elements/Icon";
+import { CartDrawer } from "./CartDrawer.client";
 
 export default function Header({ shop }) {
   const { pathname } = useUrl();
@@ -25,14 +26,7 @@ export default function Header({ shop }) {
 
   return (
     <>
-      <Drawer open={isOpen} onClose={closeDrawer}>
-        <div className="grid">
-          <Drawer.Title>
-            <h2 className="sr-only">Cart Drawer</h2>
-          </Drawer.Title>
-          <CartDetails onClose={closeDrawer} />
-        </div>
-      </Drawer>
+      <CartDrawer isOpen={isCartOpen} onClose={closeCart}/>
       <MobileHeader
           title={title}
           isHome={isHome}

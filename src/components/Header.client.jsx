@@ -24,10 +24,33 @@ export default function Header({ shop }) {
   const isHome = pathname === "/";
   const title = shop.name;
 
+  const menu = {
+    items: [
+      {
+        id: 1,
+        to: '/',
+        title: 'Home',
+        target: '_self'
+      },
+      {
+        id: 2,
+        to: '/products',
+        title: 'Products',
+        target: '_self'
+      },
+    ]
+  };
+
   return (
     <>
       <CartDrawer isOpen={isCartOpen} onClose={closeCart} />
-      <MenuDrawer isOpen={isMenuOpen} onClose={closeMenu} />
+      <MenuDrawer isOpen={isMenuOpen} onClose={closeMenu} menu={menu}/>
+      <DesktopHeader
+        title={title}
+        isHome={isHome}
+        openCart={openCart}
+        menu={menu}
+      />
       <MobileHeader
           title={title}
           isHome={isHome}
@@ -94,6 +117,46 @@ function MobileHeader({title, isHome, openCart, openMenu}) {
           onClick={openCart}
           className="relative flex items-center justify-center w-8 h-8"
         >
+          <IconBag />
+          <CartBadge dark={isHome} />
+        </button>
+      </div>
+    </header>
+  );
+}
+
+function DesktopHeader({countryCode, isHome, menu, openCart, title}) {
+  const {y} = useWindowScroll();
+
+  const styles = {
+    button:
+      'relative flex items-center justify-center w-8 h-8 focus:ring-primary/5',
+    container: `${
+      isHome
+        ? 'bg-black/80 text-white dark:bg-contrast/60  text-contrast dark:text-primary shadow-darkHeader'
+        : 'bg-contrast/80 text-primary'
+    } ${
+      y > 50 && !isHome ? 'shadow-lightHeader ' : ''
+    }hidden h-nav lg:flex items-center sticky transition duration-300 backdrop-blur-lg z-40 top-0 justify-between w-full leading-none gap-8 px-12 py-8`,
+  };
+
+  return (
+    <header role="banner" className={styles.container}>
+      <div className="flex gap-12">
+        <Link className={`font-bold`} to="/">
+          {title}
+        </Link>
+        <nav className="flex gap-8">
+          {/* Top level menu items */}
+          {(menu?.items || []).map((item) => (
+            <Link key={item.id} to={item.to} target={item.target}>
+              {item.title}
+            </Link>
+          ))}
+        </nav>
+      </div>
+      <div className="flex items-center gap-1">
+        <button onClick={openCart} className={styles.button}>
           <IconBag />
           <CartBadge dark={isHome} />
         </button>

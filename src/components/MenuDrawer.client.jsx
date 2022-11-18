@@ -9,26 +9,9 @@ import {Fragment, useState} from 'react';
 import {Dialog, Transition} from '@headlessui/react';
 
 
-export function MenuDrawer({isOpen, onClose}) {
-  const menu = {
-    items: [
-      {
-        id: 1,
-        to: '/',
-        title: 'Home',
-        target: '_self'
-      },
-      {
-        id: 2,
-        to: '/products',
-        title: 'Products',
-        target: '_self'
-      },
-    ]
-  };
-  
+export function MenuDrawer({isOpen, onClose, menu}) {  
   return (
-    <Drawer open={isOpen} onClose={onClose} openFrom="left" heading="Menu">
+    <Drawer open={isOpen} onClose={onClose} openFrom="left" heading="GB-MOUTH">
       <div className="grid">
         <MenuMobileNav menu={menu} onClose={onClose} />
       </div>

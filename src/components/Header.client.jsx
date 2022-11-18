@@ -86,7 +86,7 @@ function MobileHeader({title, isHome, openCart, openMenu}) {
           to="/"
         >
           <div className="font-bold text-center" as={isHome ? 'h1' : 'h2'}>
-            {title}
+            {title.toUpperCase()}
           </div>
         </Link>
         <button
@@ -120,7 +120,7 @@ function DesktopHeader({countryCode, isHome, menu, openCart, title}) {
     <header role="banner" className={styles.container}>
       <div className="flex gap-12">
         <Link className={`font-bold`} to="/">
-          {title}
+          {title.toUpperCase()}
         </Link>
         <nav className="flex gap-8">
           {/* Top level menu items */}

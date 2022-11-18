@@ -1,9 +1,9 @@
 import { useUrl, Link, useCart } from "@shopify/hydrogen";
 import { useWindowScroll } from "react-use";
-import { Drawer, useDrawer } from "./Drawer.client";
-import { CartDetails } from "./CartDetails.client";
+import { useDrawer } from "./Drawer.client";
 import { IconBag, IconMenu } from "./elements/Icon";
 import { CartDrawer } from "./CartDrawer.client";
+import { MenuDrawer, useMenuDrawer } from "./MenuDrawer.client";
 
 export default function Header({ shop }) {
   const { pathname } = useUrl();
@@ -18,7 +18,7 @@ export default function Header({ shop }) {
     isOpen: isMenuOpen,
     openDrawer: openMenu,
     closeDrawer: closeMenu,
-  } = useDrawer();
+  } = useMenuDrawer();
 
 
   const isHome = pathname === "/";
@@ -26,7 +26,8 @@ export default function Header({ shop }) {
 
   return (
     <>
-      <CartDrawer isOpen={isCartOpen} onClose={closeCart}/>
+      <CartDrawer isOpen={isCartOpen} onClose={closeCart} />
+      <MenuDrawer isOpen={isMenuOpen} onClose={closeMenu} />
       <MobileHeader
           title={title}
           isHome={isHome}

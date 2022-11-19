@@ -9,7 +9,9 @@ import {
 import { Suspense } from "react";
 
 import { Layout } from "../../components/Layout.server";
-import ProductCard from "../../components/ProductCard.server";
+import ProductCard from "../../components/product/ProductCard.server";
+import { PageHeader } from "../../components/global/PageHeader";
+import { Section } from "../../components/elements/Section";
 
 export default function Collection() {
   const { handle } = useRouteParams();
@@ -35,21 +37,7 @@ export default function Collection() {
       <Suspense>
         <Seo type="collection" data={collection} />
       </Suspense>
-      <header className="grid w-full gap-8 p-4 md:p-8 lg:p-12 justify-items-start">
-        <h1 className="text-4xl whitespace-pre-wrap font-bold inline-block">
-          {collection.title}
-        </h1>
-        {collection.description && (
-          <div className="flex items-baseline justify-between w-full">
-            <div>
-              <p className="max-w-md whitespace-pre-wrap inherit text-copy inline-block">
-                {collection.description}
-              </p>
-            </div>
-          </div>
-        )}
-      </header>
-
+      <PageHeader heading="Collections" variant="allCollections" />
       <section className="w-full gap-4 md:gap-8 grid p-6 md:p-8 lg:p-12">
         <div className="grid-flow-row grid gap-2 gap-y-6 md:gap-4 lg:gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {collection.products.nodes.map((product) => (

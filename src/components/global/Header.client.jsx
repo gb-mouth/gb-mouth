@@ -1,7 +1,7 @@
 import { useUrl, Link, useCart } from "@shopify/hydrogen";
 import { useWindowScroll } from "react-use";
 import { useDrawer } from "./Drawer.client";
-import { IconBag, IconMenu } from "./elements/Icon";
+import { IconBag, IconMenu } from "../elements/Icon";
 import { CartDrawer } from "./CartDrawer.client";
 import { MenuDrawer, useMenuDrawer } from "./MenuDrawer.client";
 

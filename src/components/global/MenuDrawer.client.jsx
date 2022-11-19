@@ -1,9 +1,9 @@
-import { Text } from "./elements/Text";
+import { Text } from "../elements/Text";
 // import { Drawer } from "./Drawer.client";
 import { Link } from "@shopify/hydrogen";
 import { startTransition } from "react";
-import { Heading } from "./elements/Heading";
-import { IconClose } from "./elements/Icon";
+import { Heading } from "../elements/Heading";
+import { IconClose } from "../elements/Icon";
 import {Fragment, useState} from 'react';
 // @ts-expect-error @headlessui/react incompatibility with node16 resolution
 import {Dialog, Transition} from '@headlessui/react';

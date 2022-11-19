@@ -1,5 +1,5 @@
 import { Drawer } from "./Drawer.client";
-import { CartDetails } from "./CartDetails.client";
+import { CartDetails } from "../cart/CartDetails.client";
 
 export function CartDrawer({isOpen, onClose}) {
   return (

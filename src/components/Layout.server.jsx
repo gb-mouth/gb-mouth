@@ -7,7 +7,7 @@ import {
   Seo,
 } from "@shopify/hydrogen";
 import { Suspense } from "react";
-import Header from "./Header.client";
+import Header from "./global/Header.client";
 
 /**
  * A server component that defines a structure and organization of a page that can be used in different parts of the Hydrogen app

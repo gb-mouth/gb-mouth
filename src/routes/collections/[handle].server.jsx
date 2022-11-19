@@ -9,7 +9,7 @@ import {
 import { Suspense } from "react";
 
 import { Layout } from "../../components/Layout.server";
-import ProductCard from "../../components/ProductCard.server";
+import ProductCard from "../../components/product/ProductCard.server";
 
 export default function Collection() {
   const { handle } = useRouteParams();

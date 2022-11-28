@@ -26,13 +26,13 @@ export default function ProductDetails({ product }) {
                 {product.vendor}
               </span>
             </div>
-            <ProductForm product={product} />
             <div className="mt-8">
               <div
                 className="prose border-t border-gray-200 pt-6 text-black text-md"
                 dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
               ></div>
             </div>
+            <ProductForm product={product} />
           </div>
         </div>
       </section>
@@ -80,7 +80,7 @@ function ProductForm({ product }) {
           data={product}
         />
       </div>
-      <div className="grid items-stretch gap-4">
+      <div className="grid items-stretch gap-4 pb-4">
         <PurchaseMarkup />
       </div>
     </form>

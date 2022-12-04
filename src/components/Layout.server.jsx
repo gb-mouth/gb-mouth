@@ -35,7 +35,7 @@ export function Layout({ children }) {
           }}
         />
       </Suspense>
-      <div className="flex flex-col min-h-screen antialiased bg-neutral-50">
+      <div className="flex flex-col min-h-screen antialiased bg-white">
         <div className="">
           <a href="#mainContent" className="sr-only">
             Skip to content

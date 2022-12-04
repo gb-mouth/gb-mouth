@@ -23,10 +23,12 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.4",
+    "@material-tailwind/react": "^1.2.4",
     "@shopify/hydrogen": "^1.6.1",
     "clsx": "^1.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.4",
     "react-use": "^17.4.0",
     "typographic-base": "^1.0.4"
   },

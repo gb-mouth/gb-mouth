@@ -31,10 +31,9 @@ export function Layout({ children }) {
     showModal = true;
   }
 
-  console.log('isHome: ', isHome)
-
   const handleClick = () => {
-    console.log('handleClick')
+    console.log('handleClick');
+    showModal = false;
   }
 
   return (
@@ -54,10 +53,12 @@ export function Layout({ children }) {
             Skip to content
           </a>
         </div>
-        <Header shop={shop} />
-        {/* <TopView className="absolute top-0 block object-cover w-full h-full"/> */}
         {showModal &&
-          <TopLoading  />
+            <TopLoading className="-z-999" />
+        }
+        <Header shop={shop} className="-z-11" />
+        {isHome &&
+          <TopView className="absolute top-0 block object-cover w-full h-full"/>
         }
         <main role="main" id="mainContent" className={`${isHome ? 'bg-black/80 text-white' : ''} absolute flex-grow -z-2`}>
           <Suspense>{children}</Suspense>

@@ -8,6 +8,8 @@ import {
 } from "@shopify/hydrogen";
 import { Suspense } from "react";
 import Header from "./global/Header.client";
+import { TopLoading } from "./TopLoading.client";
+import { TopView } from "./sections/TopView.server";
 
 /**
  * A server component that defines a structure and organization of a page that can be used in different parts of the Hydrogen app
@@ -15,6 +17,7 @@ import Header from "./global/Header.client";
 export function Layout({ children }) {
   const { pathname } = useUrl();
   const isHome = pathname === "/";
+  var showModal = false;
 
   const {
     data: { shop },
@@ -23,6 +26,16 @@ export function Layout({ children }) {
     cache: CacheLong(),
     preload: true,
   });
+
+  if (isHome) {
+    showModal = true;
+  }
+
+  console.log('isHome: ', isHome)
+
+  const handleClick = () => {
+    console.log('handleClick')
+  }
 
   return (
     <>
@@ -36,13 +49,17 @@ export function Layout({ children }) {
         />
       </Suspense>
       <div className="flex flex-col min-h-screen antialiased bg-white">
-        <div className="">
+        <div>
           <a href="#mainContent" className="sr-only">
             Skip to content
           </a>
         </div>
         <Header shop={shop} />
-        <main role="main" id="mainContent" className={`${isHome ? 'bg-black/80 text-white' : ''} flex-grow`}>
+        {/* <TopView className="absolute top-0 block object-cover w-full h-full"/> */}
+        {showModal &&
+          <TopLoading  />
+        }
+        <main role="main" id="mainContent" className={`${isHome ? 'bg-black/80 text-white' : ''} absolute flex-grow -z-2`}>
           <Suspense>{children}</Suspense>
         </main>
       </div>

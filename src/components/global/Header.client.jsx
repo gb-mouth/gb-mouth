@@ -36,8 +36,8 @@ export default function Header({ shop }) {
         // `to` key の value を collection `all` に向ける
         // collection `all` へのリンク:
         // https://gb-mouth.myshopify.com/admin/collections/291237068989
-        to: '/products',
-        title: 'all',
+        to: '/collections/all',
+        title: 'All',
         target: '_self'
       },
     ]

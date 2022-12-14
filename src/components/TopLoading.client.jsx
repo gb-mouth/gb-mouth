@@ -3,6 +3,9 @@ import { useState } from "react";
 import GbMouth from '../assets/gb-mouth.mp4'
 
 const customStyles = {
+  overlay: {
+    zIndex: 333
+  },
   content: {
     top: '0%',
     left: '0%',
@@ -20,7 +23,7 @@ export function TopLoading () {
   }
 
   return (
-    <div onClick={handleClickModal} div className="relative top-0 w-full h-full z-2">
+    <div onClick={handleClickModal} className="relative top-0 w-full h-full">
         <Modal 
           isOpen={showModal}
           contentLabel="Minimal Modal Example"

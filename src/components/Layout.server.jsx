@@ -53,10 +53,10 @@ export function Layout({ children }) {
             Skip to content
           </a>
         </div>
+        <Header shop={shop} />
         {showModal &&
-            <TopLoading className="-z-999" />
+            <TopLoading />
         }
-        <Header shop={shop} className="-z-11" />
         {isHome &&
           <TopView className="absolute top-0 block object-cover w-full h-full"/>
         }

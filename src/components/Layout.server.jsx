@@ -57,9 +57,10 @@ export function Layout({ children }) {
         {showModal &&
             <TopLoading />
         }
-        {isHome &&
+        {/* https://github.com/gb-mouth/docs/issues/31
+          {isHome &&
           <TopView className="absolute top-0 block object-cover w-full h-full"/>
-        }
+        } */}
         <main role="main" id="mainContent" className={`${isHome ? 'bg-black/80 text-white absolute' : ''} flex-grow -z-2`}>
           <Suspense>{children}</Suspense>
         </main>

@@ -77,7 +77,7 @@ function CartCheckoutActions() {
           決済へ進む
         </Link>
         {/* <CartShopPayButton className="flex items-center justify-center rounded-sm mt-2 bg-[#5a31f4] w-full" /> */}
-        <div className="flex items-center justify-center rounded-sm mt-4 bg-[#5a31f4] w-full" />
+        <div className="flex items-center justify-center rounded-sm mt-4 bg-[#5a31f4] w-full mb-8 md:mb-1" />
       </div>
     </>
   );

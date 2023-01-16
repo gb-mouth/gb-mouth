@@ -72,11 +72,12 @@ function CartCheckoutActions() {
         <Link
           to={checkoutUrl}
           width="full"
-          className="inline-block rounded-sm font-medium text-center py-3 px-6 max-w-xl leading-none bg-black text-white w-full"
+          className="inline-block rounded-sm font-medium text-center mb-4 py-3 px-6 max-w-xl leading-none bg-black text-white w-full"
         >
           決済へ進む
         </Link>
-        <CartShopPayButton className="flex items-center justify-center rounded-sm mt-2 bg-[#5a31f4] w-full" />
+        {/* <CartShopPayButton className="flex items-center justify-center rounded-sm mt-2 bg-[#5a31f4] w-full" /> */}
+        <div className="flex items-center justify-center rounded-sm mt-4 bg-[#5a31f4] w-full" />
       </div>
     </>
   );

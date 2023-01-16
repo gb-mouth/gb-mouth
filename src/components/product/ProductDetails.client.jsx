@@ -101,7 +101,7 @@ function PurchaseMarkup() {
         disabled={isOutOfStock}
       >
         <span className="bg-black text-white inline-block rounded-sm font-medium text-center py-3 px-6 max-w-xl leading-none w-full">
-          {isOutOfStock ? "売り切れ" : "カートに追加"}
+          {isOutOfStock ? "SOLD OUT" : "カートに追加"}
         </span>
       </AddToCartButton>
       {isOutOfStock ? (

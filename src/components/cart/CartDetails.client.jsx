@@ -68,7 +68,7 @@ function CartCheckoutActions() {
   const { checkoutUrl } = useCart();
   return (
     <>
-      <div className="flex flex-col items-center mt-6 md:mt-8">
+      <div className="flex flex-col items-center mt-6 mb-8 md:mt-8 md:mb-1">
         <Link
           to={checkoutUrl}
           width="full"

@@ -1,6 +1,6 @@
 import Modal from 'react-modal';
 import { useState } from "react";
-import GbMouth from '../assets/gb-mouth2.mp4'
+import GbMouth from '../assets/gb-mouth34.mp4'
 
 const customStyles = {
   overlay: {

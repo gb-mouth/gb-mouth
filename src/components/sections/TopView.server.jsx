@@ -1,5 +1,5 @@
 import { Link } from "@shopify/hydrogen";
-import GbMouth from '../../assets/gb-mouth2.mp4'
+import GbMouth from '../../assets/gb-mouth28-34.mp4'
 import { Heading } from "../elements/Heading";
 import { Text } from "../elements/Text";
 

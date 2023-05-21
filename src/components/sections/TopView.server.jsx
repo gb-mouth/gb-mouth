@@ -8,7 +8,7 @@ export function TopView({}) {
   const byline = null
   const cta = {value: 'Shop Now →'}
   return (
-    <Link to='/products'>
+    <Link to='/collections/all'>
       <section className={`relative justify-end flex flex-col w-full -mt-nav h-screen`} >
         <div className="absolute inset-0 grid flex-grow grid-flow-col pointer-events-none auto-cols-fr -z-1 content-stretch overflow-clip">
           <video

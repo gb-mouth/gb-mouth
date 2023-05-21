@@ -38,6 +38,8 @@ function AllProductsGrid() {
     country: {isoCode: countryCode},
   } = useLocalization();
 
+  console.log('countryCode: ', countryCode)
+
   let category = useUrl().searchParams.get("category");
   if (!category) {
     category = `product_type:*`
@@ -48,7 +50,7 @@ function AllProductsGrid() {
   const {data} = useShopQuery({
     query: ALL_PRODUCTS_QUERY,
     variables: {
-      country: countryCode,
+      country: 'JP',
       language: languageCode,
       pageBy: PAGINATION_SIZE,
       category: category
@@ -58,10 +60,15 @@ function AllProductsGrid() {
 
   const products = data.products;
 
+  console.log('products: ', products)
+
+  console.log('countryCodecountryCode:', countryCode)
+  let countryCode2 = countryCode
+  countryCode2 = 'JP'
   return (
     <ProductGrid
       key="products"
-      url={`/products?country=${countryCode}&category=${category}`}
+      url={`/products?country=${countryCode2}&category=${category}`}
       collection={{products}}
     />
   );

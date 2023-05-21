@@ -11,7 +11,7 @@ function App({ routes }) {
   return (
     <Suspense fallback={null}>
       <ShopifyProvider>
-          <CartProvider countryCode={'jp'}>
+          <CartProvider>
             <Router>
               <FileRoutes routes={routes} />
             </Router>

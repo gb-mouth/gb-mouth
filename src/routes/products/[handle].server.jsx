@@ -23,6 +23,8 @@ export default function Product({ params }) {
     },
   });
 
+  console.log('product: ', product)
+
   useServerAnalytics({
     shopify: {
       pageType: ShopifyAnalyticsConstants.pageType.product,

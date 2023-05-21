@@ -25,12 +25,12 @@ export default function Header({ shop }) {
 
   const menu = {
     items: [
-      {
-        id: 1,
-        to: '/',
-        title: 'Home',
-        target: '_self'
-      },
+      // {
+      //   id: 1,
+      //   to: '/',
+      //   title: 'Home',
+      //   target: '_self'
+      // },
       {
         id: 2,
         // `to` key の value を collection `all` に向ける

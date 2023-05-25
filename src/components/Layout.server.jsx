@@ -54,9 +54,9 @@ export function Layout({ children }) {
           </a>
         </div>
         <Header shop={shop} />
-        {showModal &&
+        {/* {showModal &&
             <TopLoading />
-        }
+        } */}
         {/* https://github.com/gb-mouth/docs/issues/31
           {isHome &&
           <TopView className="absolute top-0 block object-cover w-full h-full"/>

@@ -19,7 +19,23 @@ Hydrogen is a React framework and SDK that you can use to build fast and dynamic
 npm init @shopify/hydrogen@latest --template hello-world-ts
 ```
 
-Remember to update `hydrogen.config.js` with your shop's domain and Storefront API token!
+### Environment Setup
+
+1. Copy the `.env.example` file to `.env`:
+
+```bash
+cp .env.example .env
+```
+
+2. Update the `.env` file with your Shopify credentials:
+
+```env
+SHOPIFY_STORE_DOMAIN=your-store.myshopify.com
+SHOPIFY_STOREFRONT_TOKEN=your-storefront-access-token
+SHOPIFY_STOREFRONT_API_VERSION=2022-07
+```
+
+**Note:** Never commit the `.env` file to version control. It contains sensitive credentials.
 
 ## Building for production
 

@@ -2,8 +2,8 @@ import {defineConfig} from '@shopify/hydrogen/config';
 
 export default defineConfig({
   shopify: {
-    storeDomain: 'gb-mouth.myshopify.com',
-    storefrontToken: '43f698e85ff68a13442c77704c829138',
-    storefrontApiVersion: '2022-07',
+    storeDomain: process.env.SHOPIFY_STORE_DOMAIN,
+    storefrontToken: process.env.SHOPIFY_STOREFRONT_TOKEN,
+    storefrontApiVersion: process.env.SHOPIFY_STOREFRONT_API_VERSION,
   },
 });

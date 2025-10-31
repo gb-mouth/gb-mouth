@@ -22,8 +22,14 @@ export function ProductCard({product, label, className, loading, onClick}) {
     compareAtPriceV2: compareAtPrice,
   } = flattenConnection(cardData?.variants)[0] || {};
 
+  // 予約商品情報を取得
+  const isPreOrder = product.metafield_isPreOrder?.value === 'true';
+  const releaseDate = product.metafield_releaseDate?.value;
+
   if (label) {
     cardLabel = label;
+  } else if (isPreOrder) {
+    cardLabel = '予約受付中';
   } else if (isDiscounted(price, compareAtPrice)) {
     cardLabel = 'Sale';
   } else if (isNewArrival(product.publishedAt)) {
@@ -35,7 +41,7 @@ export function ProductCard({product, label, className, loading, onClick}) {
   return (
     <Link onClick={onClick} to={`/products/${product.handle}`}>
       <div className={styles}>
-        <div className="card-image bg-primary/5">
+        <div className="card-image bg-primary/5 relative">
           <Text
             as="label"
             size="fine"
@@ -43,6 +49,11 @@ export function ProductCard({product, label, className, loading, onClick}) {
           >
             {cardLabel}
           </Text>
+          {isPreOrder && (
+            <div className="absolute top-0 left-0 m-2 bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded">
+              予約
+            </div>
+          )}
           {image && (
             <Image
               className=" w-full object-cover fadeIn"
@@ -68,6 +79,14 @@ export function ProductCard({product, label, className, loading, onClick}) {
           >
             {product.title}
           </Text>
+          {isPreOrder && releaseDate && (
+            <Text size="fine" className="text-blue-600">
+              発売予定: {new Date(releaseDate).toLocaleDateString('ja-JP', {
+                month: 'short',
+                day: 'numeric'
+              })}
+            </Text>
+          )}
           <div className="flex gap-4">
             <Text className="flex gap-4">
               <Money withoutTrailingZeros data={price} />

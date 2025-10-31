@@ -85,6 +85,18 @@ const PRODUCT_QUERY = gql`
       title
       vendor
       descriptionHtml
+      metafield_isPreOrder: metafield(namespace: "custom", key: "is_pre_order") {
+        value
+        type
+      }
+      metafield_releaseDate: metafield(namespace: "custom", key: "pre_order_release_date") {
+        value
+        type
+      }
+      metafield_message: metafield(namespace: "custom", key: "pre_order_message") {
+        value
+        type
+      }
       media(first: 7) {
         nodes {
           ...MediaFields

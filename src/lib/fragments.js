@@ -43,6 +43,12 @@ export const PRODUCT_CARD_FRAGMENT = gql`
     title
     publishedAt
     handle
+    metafield_isPreOrder: metafield(namespace: "custom", key: "is_pre_order") {
+      value
+    }
+    metafield_releaseDate: metafield(namespace: "custom", key: "pre_order_release_date") {
+      value
+    }
     variants(first: 1) {
       nodes {
         id

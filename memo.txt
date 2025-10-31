@@ -1,0 +1,19 @@
+Next.js でホームページを作ってください。サイケデリックなミュージックバーのホームページです。CSSはTailwindでお願いします。将来的には、管理画面から記事を追加できるようにバックエンドを構成したいですが、今はやらなくても大丈夫です。
+
+gemini を起動したら以下の警告が出ますが大丈夫ですか？
+```
+(node:41211) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+```
+
+起動したら以下のエラーが出たのでキャンセルしました
+```
+Error: Cannot apply unknown utility class `bg-black`. Are you using CSS modules or similar and missing `@reference`?  
+```
+
+また同じメッセージが出ます。
+```
+Error: Cannot apply unknown utility class `bg-black`. Are you using CSS modules or similar and missing `@reference`?  
+```
+
+自分の人生を最大限楽しむために受動的でいいわけが無い、と鳴いた犬
